@@ -3,6 +3,7 @@ var topics = [];
 var favorites = [];
 
 
+
 $(document).ready(function() {
 
 // This on click function handles events where the search button is clicked
@@ -29,10 +30,12 @@ function renderButtons() {
         a.addClass("searchRequestClass");
         // Added a data-attribute
         a.attr("data-name", topics[i]);
+        a.attr("value", topics[i]);
         // Provided the initial button text
         a.text(topics[i]);
         // Added the button to the buttons-view div
         $("#buttons-view").append(a);
+        
     } 
 }
 
@@ -40,16 +43,18 @@ function renderButtons() {
 $(document).on('click', '.searchRequestClass', displayGiphyImages);
 
 function displayGiphyImages() {
+    $("#images-view").empty();
+    
     var apiKey = "7gM2QWosn2bK7b9u3WWh2PbsW8PDpdjK";
-    var searchTerm = $("#search-text").val().trim();
-    // var searchTerm = $(this).attr("data-name");
+    //var searchTerm = $("#search-text").val().trim();
+    var searchTerm = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&limit=10&api_key=" + apiKey;
     // Creates AJAX call for the specific movie button being clicked
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        //console.log(response);
+        console.log(response);
    
     for (var i = 0; i < response.data.length; i++) {
     //console.log(response.data[i].images.downsized_still.url);
