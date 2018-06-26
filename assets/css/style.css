@@ -33,3 +33,10 @@ h3 {
 #search-text {
     width: 300px;
 }
+
+#bluebar {
+    width: 100%;
+    height: 5px;
+    background-color: #006dcc;
+
+}
