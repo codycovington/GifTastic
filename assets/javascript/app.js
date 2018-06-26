@@ -1,10 +1,9 @@
 
-var topics = [];
-var favorites = [];
-
-
 
 $(document).ready(function() {
+
+var topics = [];
+var favorites = [];
 
 // This on click function handles events where the search button is clicked
 $("#search-request").on("click", function(event) {
@@ -34,8 +33,7 @@ function renderButtons() {
         // Provided the initial button text
         a.text(topics[i]);
         // Added the button to the buttons-view div
-        $("#buttons-view").append(a);
-        
+        $("#buttons-view").append(a);  
     } 
 }
 
@@ -44,7 +42,7 @@ $(document).on('click', '.searchRequestClass', displayGiphyImages);
 
 function displayGiphyImages() {
     $("#images-view").empty();
-    
+
     var apiKey = "7gM2QWosn2bK7b9u3WWh2PbsW8PDpdjK";
     //var searchTerm = $("#search-text").val().trim();
     var searchTerm = $(this).attr("data-name");
@@ -119,7 +117,6 @@ $("#clear-results").on("click", function(event) {
 //PUSH THE GIF TO FAVORITES IN LOCAL STORAGE VIA THE BUTTON
 $("body").on("click", ".favButton",  function(event) {
     event.preventDefault();
-
     console.log($(this).attr("src"));
     localStorage.setItem("favorite_url", $(this).attr("src"));
     localStorage.setItem("data-state", $(this).attr("data-state")); 
@@ -146,8 +143,7 @@ function displayFavorites() {
         $("#favorites").hide();
       } else {
           $("#favorites").show();
-      } 
-      
+      }     
 }
 
 //Call the function to display Favorites
@@ -172,6 +168,6 @@ $("body").on("click", ".deleteFav", function(event) {
 });
 
 
-
+//END document ready
 })
 
