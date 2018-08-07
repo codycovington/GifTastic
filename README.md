@@ -5,5 +5,5 @@ Users can add/remove a favorite to be stored in local storage.
 
 Buttons are generated from searches automatically by JQuery.
 
-[[https://github.com/codycovington/GifTastic/screenshot-giftastic.png|alt=giftastic]]
 
+![alt text](https://github.com/codycovington/GifTastic/blob/master/screenshot-giftastic.png)
